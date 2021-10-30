@@ -142,6 +142,7 @@ class ConnectionPool
             if (compareAndSetHead(t, connectionObject)) {
                 decAndGetUsed();
                 fireConnectionReleased(t);
+                return;
             }
         }
     }
